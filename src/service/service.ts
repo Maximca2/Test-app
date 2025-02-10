@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_VPIC_API
+// const API_BASE_URL = process.env.NEXT_PUBLIC_VPIC_API
 export async function fetchMakes() {
   try {
     const res = await fetch(
