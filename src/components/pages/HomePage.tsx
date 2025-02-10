@@ -34,26 +34,26 @@ export default function HomePage() {
       </h1>
       <div className="w-full justify-center items-center flex-col flex gap-4">
         <select
-          className="p-2 border rounded w-64"
+          className="p-2 border rounded w-64 text-black"
           onChange={(e) => setSelectedMake(e.target.value)}
           value={selectedMake}
         >
-          <option value="">Select Vehicle Make</option>
+          <option className='text-black' value="">Select Vehicle Make</option>
           {makes.map((make: { MakeName: string; MakeId: string }) => (
-            <option key={make.MakeId} value={make.MakeId}>
+            <option key={make.MakeId} className='text-black' value={make.MakeId}>
               {make.MakeName}
             </option>
           ))}
         </select>
 
         <select
-          className="p-2 border rounded w-64"
+          className="p-2 border rounded w-64 text-black"
           onChange={(e) => setSelectedYear(e.target.value)}
           value={selectedYear}
         >
-          <option value="">Select Model Year</option>
+          <option className='text-black' value="">Select Model Year</option>
           {years.map((year) => (
-            <option key={year} value={year}>
+            <option className='text-black' key={year} value={year}>
               {year}
             </option>
           ))}
