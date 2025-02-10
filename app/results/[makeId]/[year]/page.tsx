@@ -6,22 +6,23 @@ import { Suspense } from 'react'
 export async function generateStaticParams() {
   const data = await fetchMakes()
 
+  // Modify property names to match the ones expected by CarInfo
   const paths = data.map((it: { MakeId: string; VehicleTypeId: string }) => ({
     params: {
-      MakeId: it.MakeId.toString(),
-      VehicleTypeId: it.VehicleTypeId.toString(),
+      makeId: it.MakeId.toString(), // Ensure the property name matches
+      year: it.VehicleTypeId.toString(), // Ensure the property name matches
     },
   }))
 
   return paths
 }
 
-export default function CarInfo({
+export default async function CarInfo({
   params,
 }: {
-  params: { makeId: string; year: string }
+  params: Promise<{ makeId: string; year: string }>;
 }) {
-  const { makeId, year } = params
+  const { makeId, year } = await params
 
   return (
     <Suspense

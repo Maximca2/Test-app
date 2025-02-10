@@ -1,5 +1,4 @@
-import { fetchMakes, fetchModel } from '@/service/service'
-import { Suspense } from 'react'
+import { fetchModel } from '@/service/service'
 import VehicleModelList from '../VehicleModelList/VehicleModelList'
 
 export default async function ResultPage({
